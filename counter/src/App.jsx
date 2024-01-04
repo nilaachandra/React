@@ -9,11 +9,13 @@ function App() {
 
   const addValue = () => {
     setCounter(counter + 1)
-    console.log(counter);
+    if (counter === 20) {
+      alert("Counter Limit Reached");
+      counter = 0
+    }
   };
   const removeValue = () => {
     setCounter(counter - 1)
-    console.log(counter)
   }
   return (
     <>
