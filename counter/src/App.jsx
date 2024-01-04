@@ -4,19 +4,22 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-
-  let [counter, setCounter] = useState(15)
+  let [counter, setCounter] = useState(15);
 
   const addValue = () => {
-    setCounter(counter + 1)
-    if (counter === 20) {
+    setCounter(counter + 1);
+    if (counter === 25) {
       alert("Counter Limit Reached");
-      counter = 0
+      setCounter(counter);
     }
   };
   const removeValue = () => {
-    setCounter(counter - 1)
-  }
+    setCounter(counter - 1);
+    if (counter === 0) {
+      alert("counter cannot be negative");
+      setCounter(0);
+    }
+  };
   return (
     <>
       <h1>My React Counter</h1>
